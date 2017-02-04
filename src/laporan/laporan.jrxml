@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="720" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="e882eb0a-3a10-432f-a1eb-d902642782ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="idtransaksi" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT konsumen.nama AS namakonsumen, konsumen.jalan AS jalankonsumen, konsumen.kecamatan AS kecamatankonsumen, konsumen.kota AS kotakunsumen, konsumen.telepon AS teleponkonsumen, barang.nama_barang AS namabrg, item.harga AS harga, layanan.nama_layanan AS namalyn, transaksi.tanggal_keluar, transaksi.harga_transaksi, transaksi.status,operator.fullname
+FROM 
+transaksi join operator on(transaksi.id_operator=operator.id_operator)
+join konsumen on (transaksi.id_konsumen=konsumen.id_konsumen)
+join item on(transaksi.id_transaksi=item.id_transaksi) 
+join barang on (item.id_barang=barang.id_barang) 
+join layanan on (item.id_layanan=layanan.id_layanan)
+WHERE transaksi.id_transaksi = $P{idtransaksi}]]>
+	</queryString>
+	<field name="namakonsumen" class="java.lang.String"/>
+	<field name="jalankonsumen" class="java.lang.String"/>
+	<field name="kecamatankonsumen" class="java.lang.String"/>
+	<field name="kotakunsumen" class="java.lang.String"/>
+	<field name="teleponkonsumen" class="java.lang.String"/>
+	<field name="namabrg" class="java.lang.String"/>
+	<field name="harga" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="namalyn" class="java.lang.String"/>
+	<field name="tanggal_keluar" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_transaksi" class="java.lang.Float">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="status" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fullname" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="90" splitType="Stretch">
+			<line>
+				<reportElement x="37" y="78" width="483" height="1" uuid="bdfa7811-5658-4a98-a0dd-7b3a2e26d39d"/>
+			</line>
+			<image>
+				<reportElement x="210" y="14" width="130" height="38" uuid="c4c2eba7-06b0-4b09-ad4c-d425857ecebb"/>
+				<imageExpression><![CDATA["D:\\Document\\Akademis\\KULIAH\\@SEMESTER 4\\Pemrog. Visual\\LondryDoneV3\\src\\project\\images\\logo1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="150" splitType="Stretch">
+			<staticText>
+				<reportElement x="39" y="76" width="100" height="20" uuid="55ceff47-0c7d-432a-9213-2eafcadbec30"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Alamat]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="243" y="116" width="177" height="20" uuid="6cad2a41-e7ad-410b-adfb-f7b42a8fd47b"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="198" y="76" width="15" height="20" uuid="7aa68d49-9f6b-408e-b853-8391655d499b"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="96" width="100" height="20" uuid="f0a5a52a-3b22-4dfb-a468-7cb09b308877"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="56" width="15" height="20" uuid="e43deff1-ac3a-4010-b6e1-358dda955e2e"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="56" width="100" height="20" uuid="135fad5f-5ef5-4225-b665-4420b025858b"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="96" width="15" height="20" uuid="b291a5c4-ab3e-4b08-976f-e829d24a631a"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="311" y="12" width="77" height="20" uuid="c6afcc36-695c-4522-9ecb-8ef09321b4c1"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Tanggal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="116" width="100" height="20" uuid="7a9ff832-9bbd-4a2b-b0e3-06ce61de2815"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="243" y="96" width="177" height="20" uuid="99e5dc5c-1ccd-4870-9fa0-b3ceda34d11f"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{teleponkonsumen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="243" y="56" width="177" height="20" uuid="44b62d46-d16b-4f79-bfbb-f2d873815209"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namakonsumen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="12" width="131" height="20" uuid="cce4f075-73f1-4380-8759-2e30cf1bf606"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tanggal_keluar}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="198" y="116" width="15" height="20" uuid="79212592-d106-4eb5-a6e2-9a7200ace112"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="243" y="76" width="177" height="20" uuid="87a4562e-f6a6-44b4-a057-303ed103692a"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jalankonsumen}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<line>
+				<reportElement x="37" y="48" width="483" height="1" uuid="ebbfa557-312d-4979-a31f-04d5570efb45"/>
+			</line>
+			<staticText>
+				<reportElement x="420" y="22" width="100" height="20" uuid="ca22b47e-6fce-4796-a0a7-9212ee94dc15"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="198" y="22" width="100" height="20" uuid="3132ac36-809d-4cee-80d3-37e4b6ca4d13"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Layanan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="39" y="22" width="100" height="20" uuid="02ba620e-ba48-489c-be5d-9203e9c3fe23"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Barang]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="10" width="100" height="20" uuid="ec569d22-1fdc-4d12-9fe5-b7d817fbc747"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="39" y="10" width="100" height="20" uuid="6c55b8d4-04e2-44c8-997c-4df602994218"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namabrg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="198" y="10" width="100" height="20" uuid="a1cd732f-e5aa-4e16-b99e-c72f55a266d2"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namalyn}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="200" splitType="Stretch">
+			<textField>
+				<reportElement x="60" y="146" width="150" height="20" uuid="f137efa3-8351-497c-8a3c-2dc80e183070"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fullname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="78" y="83" width="45" height="20" uuid="117fcb5c-daf2-4d55-875f-348535f7c2f9"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Kasir]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="21" width="100" height="20" uuid="12f9c377-00d2-4a5a-b9f7-f62d74ac099d"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{harga_transaksi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="343" y="21" width="45" height="20" uuid="4f680511-cb48-4efb-9eaa-4bc707111468"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14"/>
+				</textElement>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="37" y="9" width="483" height="1" uuid="d7f87219-efb8-4acc-afa4-b713dca9ac69"/>
+			</line>
+			<staticText>
+				<reportElement x="253" y="180" width="118" height="20" uuid="b62e5278-a36b-4a42-b27b-5aee5dfefda0"/>
+				<textElement>
+					<font fontName="Lucida Console" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Terima Kasih ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

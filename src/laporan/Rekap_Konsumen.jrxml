@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f1404428-a8ce-4399-a798-941640a5d4e8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM KONSUMEN]]>
+	</queryString>
+	<field name="id_konsumen" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telepon" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jalan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kecamatan" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kota" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="341" height="33" uuid="35f2d024-46be-4af8-adcb-a8480ac5f386"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[REKAP DATA KONSUMEN]]></text>
+			</staticText>
+			<image>
+				<reportElement x="395" y="13" width="130" height="38" uuid="ac14bcfa-caa1-4bf8-97ae-7a973dde152b"/>
+				<imageExpression><![CDATA["E:\\Document\\Akademis\\KULIAH\\@SEMESTER 4\\Pemrog. Visual\\LondryDoneV3\\src\\project\\images\\logo1.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="02b0364b-51c0-442d-b254-1803d36f85b6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="92" height="15" uuid="e2d1261d-cc88-4f28-b672-395013fe0415"/>
+				<text><![CDATA[id_konsumen]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="92" y="19" width="92" height="15" uuid="ee0727bf-2c1d-473f-8a74-a443f3e83434"/>
+				<text><![CDATA[nama]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="184" y="19" width="92" height="15" uuid="24055738-5a12-41d8-a79f-2bd20e3766bd"/>
+				<text><![CDATA[telepon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="276" y="19" width="92" height="15" uuid="a2f1520b-b085-4105-aa27-bd9a031ec234"/>
+				<text><![CDATA[jalan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="368" y="19" width="92" height="15" uuid="cfd1dc41-76a8-4d4e-aee4-c21b4e94d24c"/>
+				<text><![CDATA[kecamatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="460" y="19" width="92" height="15" uuid="77fa4ed2-f95c-45c6-a51a-dc436805d02f"/>
+				<text><![CDATA[kota]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="b4987d17-c335-4c48-aa0f-98bb9186396c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="c7508683-af13-4b18-b94b-c4ca73bc0756"/>
+				<textFieldExpression><![CDATA[$F{id_konsumen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="7415da7d-bc10-4ec0-889c-8ecbb7ded453"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="67b2c59e-eb5f-49f1-ae2c-d332db240ce1"/>
+				<textFieldExpression><![CDATA[$F{telepon}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="276" y="0" width="92" height="15" uuid="e80e98c5-4417-45e2-9bac-907ddba4ee55"/>
+				<textFieldExpression><![CDATA[$F{jalan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="2a41eaf8-a8fe-407e-a756-71bd231961a0"/>
+				<textFieldExpression><![CDATA[$F{kecamatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="6f4fe64a-7eb6-440d-835d-1d0e1bfdf3ac"/>
+				<textFieldExpression><![CDATA[$F{kota}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="b3f5d4fc-fca8-4248-ae27-cffb99271034"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="9bd08761-b5d7-456a-a907-84b3e2af130d"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="bd9fbd27-8a06-4ea5-8ec6-1861c91e6ea1"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="c23cae8e-09fd-4968-b3c8-9f71399fa70d"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
